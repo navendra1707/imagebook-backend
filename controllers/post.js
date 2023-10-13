@@ -75,7 +75,6 @@ export const deletePost = async (req, res) => {
     await cloudinary.uploader.destroy(post.imageId);
 
     await Post.findByIdAndRemove(postId);
-    console.log("function Called.");
 
     res.status(204).json({
       message: "Post Deleted",
